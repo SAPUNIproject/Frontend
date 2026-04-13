@@ -1,18 +1,22 @@
 import { Routes, Route } from "react-router-dom";
 import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
-import Files from "./pages/Files";
-import Navbar from "./components/Navbar";
+import Layout from "./components/Layout";
 
-export default function App() {
+function App() {
   return (
-    <div>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Login />} />
+    <Routes>
+      <Route path="/" element={<Login />} />
+
+      <Route element={<Layout />}>
         <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/files" element={<Files />} />
-      </Routes>
-    </div>
+        <Route path="/documents" element={<h2>Documents Page</h2>} />
+        <Route path="/versions" element={<h2>Versions Page</h2>} />
+        <Route path="/users" element={<h2>Users Page</h2>} />
+        <Route path="/settings" element={<h2>Settings Page</h2>} />
+      </Route>
+    </Routes>
   );
 }
+
+export default App;
