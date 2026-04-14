@@ -12,6 +12,7 @@ export default function Login() {
   const passwordRegex =
     /^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_\-+=\[\]{};:'"\\|,.<>/?]).{8,}$/;
 
+  // Сложи за създаване на акоунт
   const handleLogin = () => {
     if (!username) {
       setError("Username cannot be empty");
@@ -69,9 +70,10 @@ export default function Login() {
             <label>Password</label>
           </div>
 
-          <button className="button" onClick={handleLogin}>
+          <button className="loginButton" onClick={handleLogin}>
             Login
           </button>
+          
         </div>
       </div>
     </div>
